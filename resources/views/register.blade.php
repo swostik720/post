@@ -73,7 +73,7 @@
 
     <div class="register-container">
         <h2>Register</h2>
-        <form action="/register" method="POST">
+        <form action="/register" method="post">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" value="{{ old('email') }}">
             

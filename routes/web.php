@@ -8,6 +8,6 @@ Route::get('/', function () {
 });
 
 Route::get('/login',[UserController::class,'login']);
-Route::get('/register',[UserController::class,'register']);
+Route::post('/register',[UserController::class,'register']);
 Route::get('/forgot_password',[UserController::class,'forgot_password']);
 Route::get('/index',[UserController::class,'index']);
