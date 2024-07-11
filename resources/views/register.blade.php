@@ -73,7 +73,17 @@
 
     <div class="register-container">
         <h2>Register</h2>
-        <form action="/register" method="post">
+        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+        <form action="{{url('register')}}" method="post">
+          @csrf
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" value="{{ old('email') }}">
             

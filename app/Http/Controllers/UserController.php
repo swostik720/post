@@ -13,6 +13,17 @@ class UserController extends Controller
     public function register(){
         return view('register');
     }
+    public function store(Request $request){
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+        $user = new User();
+        $user->email=$request->email;
+        $user->password=bcrypt($request->password);
+        $user->save();
+        return redirect('login');
+    }
     public function forgot_password(){
         return view('forgot_password');
     }
